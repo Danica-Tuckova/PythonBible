@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+
+    var customer = {
+      name: "Tom Smith",
+      speak: function() {
+        return "My name is " + this.name;
+      },
+      // object inside the object
+      address: {
+        street: "123 Main St",
+        city: "Pittsburgh",
+        state: "PA"
+      }
+    };
+    // information about name - zavolanie funkcie
+    document.write(customer.speak() + "<br>");
+    // information about address
+    document.write(customer.name + " lives at " + customer.address.street + "<br>");
+
+    // add properties
+    customer.address.country = "US";
+    document.write(customer.address.country + "<br>");
+
+    // construction function
+    function Person(name, street) {
+      this.name = name;
+      this.street = street;
+      this.info = function() {
+        return "My name is " + this.name + " and I live on " + this.street;
+      }
+    }
+
+    // create a person
+    var bobSmith = new Person("Bob Smith", "23 Main St");
+    // zavolanie funkcie cez this.info
+    document.write(bobSmith.info() + "<br>");
+
+    // pass object to a function and change it's values
+    function changeName(xy) {
+      xy.name = "Sue Smith";
+    }
+
+    // zavolanie funkcie
+    changeName(bobSmith);
+    document.write("Bob became " + bobSmith.name + "<br>" )
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>objects - youtube</title>
+  </head>
+  <body>
+    <script>
+
+// 1.long notation
+var myArray = new Array();
+myArray[0] = 8;
+myArray[1] = "hello";
+
+var myCar = new Object();
+myCar.maxSpeed = 50;
+myCar.driver = "Shaun";
+myCar.drive = function() {
+  console.log("now driving");
+};
+
+// zavolanie funkcie
+myCar.drive();
+console.log(myCar.driver);
+
+// ...............................
+// 2. short notation
+
+var myArray2 = [10, "bye"];
+
+var myCar2 = {
+  maxSpeed: 70,
+  driver: "John",
+  drive: function() {
+    console.log("now is not driving");
+  }
+};
+
+console.log(myCar2.maxSpeed);
+// zavolanie funkcie
+myCar2.drive();
+// ......................................
+
+// funkcia
+var myCar3 = {
+  maxSpeed: 70,
+  driver: "John",
+  drive: function(speed, time) {
+    console.log(speed * time);
+  },
+  logDriver: function() {
+    console.log("driver name is " + this.driver);
+  }
+};
+
+myCar3.drive(50, 3);
+// zavolanie funkcie s danymi hodnotami
+
+// -------------------------------------------
+
+  // construction function - function that creates an object for us
+  // vytvaranie noveho pola
+
+var Car = function(maxSpeed, driver) {
+
+  // properties of construction function
+  this.maxSpeed = maxSpeed;
+  this.driver = driver;
+  // methods of construction function
+  this.drive = function(speed, time) {
+    console.log(speed * time);
+  };
+  this.logDriver = function() {
+    console.log("driver name is " + this.driver);
+  }
+}
+// call that construction function and send it to a new variable - myCar...
+var myCar = new Car(70, "Stefan");
+
+var myCar2 = new Car(40, "Lulan");
+var myCar3 = new Car(50, "Havko");
+var myCar4 = new Car(90, "Lukas");
+
+myCar.drive(70, 5);
+myCar3.drive(50, 8);
+
+
+
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ff</title>
+  </head>
+  <body>
+    <script>
+
+var song = {
+  name: "Love you",
+  interpret: "Chuanito",
+  playing: false,
+  start: function () {
+    if (!this.playing) {
+      // ! - negacia - aby podmienka presla musi byt true
+      // najprv je false
+      // pokial nehra -> tak hraj
+      this.playing == true;
+      console.log("Playing " + song.name + " by " + song.interpret);
+    }
+  },
+  pause: function() {
+    if (this.playing) {
+      this.playing = false;
+    }
+  },
+};
+  song.start();
+  song.pause();
+  // zavolanie funkcii
+
+  </script>
+  </body>
+</html>

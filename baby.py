@@ -2,10 +2,10 @@
 # pick a random one question from the list for the baby to use
 
 # z balika random vybrat funkciu choice
-from random import choice
+import random 
 questions = ["Why is the sky blue?", "Why is there a face on the moon?", "Where are all the dinosaurus?"]
 
-question = choice(questions)
+question = random.choice(questions)
 
 # baby`s question and get the answear
 answer = input(question).strip().lower()

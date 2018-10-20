@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+
+function makeCar() {
+// polia s hodnotami
+    var makes = ["Mazda", "Kia", "Touran", "Volvo", "Cooper"];
+    var models = ["Mazda6", "Sorento", "Turanik", "Volvo5", "MiniCooper"];
+    var years = [2000, 2010, 2012, 2015, 2016];
+    var colors = ["red", "blue", "grey", "white", "orange"];
+    var convertible = [true, false];
+
+// nahodne vygenerovanie jednej hodnoty z kazdeho pola
+    var random1 = Math.floor(Math.random() * makes.length);
+    var random2 = Math.floor(Math.random() * models.length);
+    var random3 = Math.floor(Math.random() * years.length);
+    var random4 = Math.floor(Math.random() * colors.length);
+    var random5 = Math.floor(Math.random() * 2);
+    var random6 = Math.floor(Math.random() * 5 ) + 1;
+    // random6 -- passangers - cisla: 0, 1, 2, 3, 4
+    // + 1 - ak vygeneruje 0 aby bol vzdy aspon jeden pasazier auta
+
+    // vytvorenie objektu car, ktory bude obsahovat vygenerovane hodnoty
+    var car = {
+        make: makes[random1],
+        model: models[random2],
+        year: years[random3],
+        color: colors[random4],
+        convertible: convertible[random5],
+        passangers: random6,
+        mileage: 0
+        // dodatocna hodnota 0 - nove auto
+  };
+
+  return car;
+}
+// koniec funkcie
+
+// vypsanie celej funkcie
+var car = makeCar();
+// console.log(newCar);
+
+console.log("Your new car is a " + car.year + " " + car.make + " " + car.model);
+
+
+
+    </script>
+  </body>
+</html>
